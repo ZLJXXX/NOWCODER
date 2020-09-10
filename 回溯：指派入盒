@@ -1,0 +1,46 @@
+#define _CRT_SECURE_NO_WARNINGS
+//假如有编号为1~3的3张扑克牌和编号为1~3的3个盒子，现在需要将3张牌分别放到3个盒子中去，
+//且每个盒子只能放一张牌，一共有多少种不同的放法。
+/*#include<iostream>
+#include<vector>
+using namespace std;
+void DFS(vector<int> boxs, vector<int> books
+	, int idx, int n)
+{
+	//边界条件
+	if (idx == n + 1)
+	{
+		for (int i = 1; i <= n; i++)
+		{
+			cout << boxs[i] << ' ';
+		}
+		cout << endl;
+		return;
+	}
+	//单张扑克放入盒子
+	for (int i = 1; i <= n; i++)
+	{
+		if (books[i] == 0)
+		{
+			boxs[idx] = i;
+			books[i] = 1;
+			//下一盒子，放入扑克牌
+			DFS(boxs, books, idx + 1, n);
+			//盒子放满后，回溯
+			books[i] = 0;
+		}
+	}
+}
+int main()
+{
+	vector<int> boxs;//盒子
+	vector<int> books;//标志位
+	int n;
+	cin >> n;
+	boxs.resize(n + 1, 0);
+	books.resize(n + 1, 0);//标志位 0 表示没放
+	int idx = 1;//第一个位置
+	DFS(boxs, books, idx, n);
+	system("pause");
+	return 0;
+}*/
