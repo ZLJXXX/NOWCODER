@@ -1,0 +1,50 @@
+题目描述
+实现函数 atoi 。函数的功能为将字符串转化为整数
+提示：仔细思考所有可能的输入情况。这个问题没有给出输入的限制，你需要自己考虑所有可能的情况。
+
+
+
+示例1
+输入
+复制
+"123"
+返回值
+复制
+123
+class Solution {
+public:
+    int atoi(const char *str) {
+        long long num = 0;
+        int symbol = 1;
+        while(*str){
+            if(*str==' '){
+                str++;
+                continue;
+            }
+            if(*str == '-'){
+                symbol = -1;
+                str++;
+                continue;
+            }
+            if(*str == '+'){
+                symbol = 1;
+                str++;
+                continue;
+            }
+            if(*str<='9'&&*str>='0'){
+                num = num*10+(*str - '0');
+            }else{
+                break;
+            }
+            str++;
+        }
+        num = num*symbol;
+        if(num > INT_MAX){
+            return INT_MAX;
+        }
+        if(num < INT_MIN){
+            return INT_MIN;
+        }
+        return num;
+    }
+};
